@@ -6,18 +6,20 @@
     describe('We have todo App', function () {
         describe('when I click the add button', function () {
             it('should add a todo to an array', function () {
+                $('.js-landing-todo-input').val('beer')
 
-            });
-            it('should add a todo template to the todo list div', function () {
+                $('.js-landing-todo-add').click()
 
-            });
-            it('should make the landingpage disappear', function () {
-
+                var firstTodoText = $('.todo-list').first().children('.description').text();
+                
+                expect(firstTodoText).to.contain('beer')
             });
         });
         describe('when I click the done button', function () {
             it('should change the done value of that object to true', function () {
+                $('')
 
+                expect()
             });
             it('should be added to the completed array', function () {
 
