@@ -1,19 +1,13 @@
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
+@import "compass/css3/border-radius";
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
-    padding-bottom: 20px;
 }
+
+$darkgrey: #eeeeee;
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -51,24 +45,135 @@ body {
 .jumbotron {
     text-align: center;
     border-bottom: 1px solid #e5e5e5;
-    .btn {
-        font-size: 21px;
-        padding: 14px 24px;
+    margin-bottom: 0px;
+
+    .hero-todo-input {
+        margin: 40px auto 0;
+        width: 400px;
+        padding-left: 10px;
+        @include border-radius(6px);
     }
 }
 
+.content {
+    height: 630px;
+    margin-top: 10px;
+    background: $darkgrey;
+
+    .sidebar {
+        height: 630px;
+        border-right: 1px solid #fff;
+
+        .sidebar-search {
+            @include border-radius(6px);
+            width: 210px;
+            margin: 20px auto 10px; 
+        }
+        .content-nav {
+            width: 210px;
+
+            .title {
+                font-size: 20px;
+                margin-top: 10px;
+                border-bottom: 1px solid #fff;
+                width: 210px;
+
+            }
+            ul {
+                margin-top: 10px;
+                list-style: none;
+                padding-left: 20px;
+
+                li {
+                    border-bottom: 1px dashed darken($darkgrey, 10%);
+                    margin: 5px auto;
+                }
+            }
+        }
+    }
+
+    .todo-tainer {
+        background: $darkgrey;
+        height: 630px;
+
+        .center-div {
+            vertical-align: top;
+            border-bottom: 1px solid black;
+
+            .head {
+                display: inline-block;
+            }
+
+            .plus-button {
+                margin-top: -8px;
+                border: none;
+                display: inline-block;
+                background: none;
+            }
+        }
+        .todo-list {
+            margin-top: 10px;
+            height: 550px;
+            overflow-y: scroll;
+            overflow-x: hidden;  
+            
+            .note-item {
+                position: relative;
+                vertical-align: top;
+                display: inline-block;
+                height: 200px;
+                width: 200px;
+                margin: 10px;
+                background: #fff;
+
+                .action-bar {
+                    height: 30px;
+                    border-bottom: 1px solid $darkgrey;
+
+                    .todo-icons {
+                        border: none;
+                        background: none;
+
+                        &.remove {
+                            color: red;
+                        }
+                        &.completed {
+                            color: green;
+                        }
+                    }
+                }
+                .more-action-bar {
+                    width: 100%;
+                    position: absolute;
+                    bottom: 0px;
+                    height: 30px;
+                    border-top: 1px solid $darkgrey;
+
+                    .todo-icons {
+                        border: none;
+                        background: none;
+
+                        &.book {
+                            
+                        }
+                        &.more {
+                            
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
 /* Supporting marketing content */
 .marketing {
-    margin: 40px 0;
-    p + h4 {
-        margin-top: 28px;
-    }
+ 
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
     .container {
-        max-width: 730px;
+        max-width: 960px;
     }
 
     /* Remove the padding we set earlier */
