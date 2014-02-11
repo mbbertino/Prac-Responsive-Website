@@ -61,33 +61,24 @@
             <h1>Wunder Note</h1> <br>
             <p>Welcome to the next level to-do manager</p>
             <p>Power up your to-do's</p>
-            <div class="hero-todo-input input-group input-group-lg">
-              <input type="text" class="js-todo-input form-control" placeholder="New todo...">
-              <span class="input-group-btn">
-                <button type="button" class=" plus-button btn btn-default">
-                      <span class="js-landing-todo-add glyphicon glyphicon-plus"></span>
-                </button>
-              </span>
-            </div>
-
           </div>
         </div>
 
 <!-- content -->
         <div class="content">
           <div class="container">
-            <div class="row">
+            <div class="js-row row">
                 <div class="col-md-3 sidebar">
                     <input class="sidebar-search"placeholder="Search your notes"><br>
                     <div class="content-nav">
                         <div class="title">Folders</div>
                         <ul class="folder-list">
-                            <li><a href="">All</a></li>
-                            <li><a href="">Active</a></li>
-                            <li><a href="">Completed</a></li>
-                            <li><a href="">School</a></li>
-                            <li><a href="">Work</a></li>
-                            <li><a href="">Family</a></li>
+                            <li class="js-all-todos">All</li>
+                            <li class="js-active-todos">Active</li>
+                            <li class="js-completed-todos">Completed</li>
+                            <li>School</li>
+                            <li>Work</li>
+                            <li>Family</li>
                         </ul>
                         <div class="title">Tags</div>
                     </div>
@@ -96,10 +87,14 @@
                 </div>
               <div class="col-md-9 todo-tainer">
                 <div class="center-div text-center">
-                    <h3 class="head">Notes</h3>
-                    <button type="button" class=" plus-button btn btn-default">
-                      <span class="glyphicon glyphicon-plus"></span>
-                    </button>
+                    <div class="hero-todo-input input-group input-group-lg">
+                      <input type="text" class="js-todo-input form-control" placeholder="New todo...">
+                      <span class="input-group-btn">
+                        <button type="button" class=" add-button btn btn-default">
+                          <span class="js-landing-todo-add glyphicon glyphicon-plus"></span>
+                        </button>
+                      </span>
+                    </div>
                 </div>
                 <div class="todo-list js-todo-list">
                     </div>
