@@ -5,9 +5,11 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 /* Space out content a bit */
 body {
+    margin-top: 50px;
+    margin-bottom: -20px;
 }
 
-$darkgrey: #eeeeee;
+$darkgrey: #ecf0f1;
 
 /* Everything but the jumbotron gets side spacing for mobile first views */
 .header,
@@ -26,7 +28,6 @@ $darkgrey: #eeeeee;
         margin-top: 0;
         margin-bottom: 0;
         line-height: 40px;
-        padding-bottom: 19px;
     }
 }
 
@@ -50,8 +51,8 @@ $darkgrey: #eeeeee;
 }
 
 .content {
-    height: 630px;
-    margin-top: 10px;
+
+    height: 800px;
     background: $darkgrey;
 
     .sidebar {
@@ -66,10 +67,11 @@ $darkgrey: #eeeeee;
         }
         .content-nav {
             width: 210px;
+            color: #999;
 
             .title {
                 font-size: 20px;
-                margin-top: 10px;
+                margin-top: 99px;
                 border-bottom: 1px solid #fff;
                 width: 210px;
 
@@ -80,8 +82,14 @@ $darkgrey: #eeeeee;
                 padding-left: 20px;
 
                 li {
-                    border-bottom: 1px dashed darken($darkgrey, 10%);
                     margin: 5px auto;
+                    border-radius: 4px;
+                    padding-left: 10px;
+
+                    &:hover {
+                        background: #3498db;
+                        color: #fff;
+                    }
                 }
             }
         }
@@ -93,13 +101,17 @@ $darkgrey: #eeeeee;
 
         .center-div {
             vertical-align: top;
-            border-bottom: 1px solid black;
+            border-bottom: 1px solid #fff;
 
             .hero-todo-input {
                 margin: 40px auto;
-                width: 400px;
-                padding-left: 10px;
+                width: 400px;                
                 @include border-radius(6px);
+                border: 1px solid #3498db;
+
+                .add-button {
+                    background: #BDc3c7;
+                }
             }
         }
         .todo-list {
@@ -112,27 +124,43 @@ $darkgrey: #eeeeee;
                 position: relative;
                 vertical-align: top;
                 display: inline-block;
-                height: 200px;
-                width: 200px;
-                margin: 10px;
-                background: rgba(0, 217, 244, 0.15);
+                height: 167px;
+                width: 167px;
+                margin: 1px;
+                background: #3498db;
+                color: #fff;
+                font-weight: 300px;
+                border-radius: 3px;
+                
+                &.true {
+                    background: #D6D6D6; 
+                }
 
                 .action-bar {
                     height: 30px;
-                    border-bottom: 1px solid $darkgrey;
+                    border-bottom: 1px dashed $darkgrey;
 
                     .todo-icons {
                         border: none;
                         background: none;
 
                         &.remove {
-                            color: red;
+                            color: #fff;
+                            
+                            &:hover {
+                                color: #e74c3c;
+                            }
                         }
                         &.completed {
-                            color: green;
+                            color: #fff;
+
+                            &:hover {
+                                color: #2ecc71;
+                            }
                         }
                     }
                 }
+                
                 .description{
                     text-align: center;
                     width: 100%;
@@ -140,28 +168,28 @@ $darkgrey: #eeeeee;
                     top: 50%;
                     margin-top: -10px;
                 }
+                    
                 .more-action-bar {
+                    // display: none;
                     width: 100%;
                     position: absolute;
-                    bottom: 0px;
-                    height: 30px;
-                    border-top: 1px solid $darkgrey;
+                    margin-top: 15%;
 
-                    .todo-icons {
+                    .edit-input {
+                        height: 75px;
+                        border-radius: 0px;
                         border: none;
-                        background: none;
-
-                        &.book {
-                            
-                        }
-                        &.more {
-                            
-                        }
+                        box-shadow: 1px 1px 10px #BDc3c7;
                     }
                 }
             }
         }
     }
+}
+
+.email-butt {
+    background: #3498db;
+    color: #fff; 
 }
 /* Supporting marketing content */
 .marketing {
@@ -184,7 +212,6 @@ $darkgrey: #eeeeee;
 
     /* Space out the masthead */
     .header {
-        margin-bottom: 30px;
     }
     
     /* Remove the bottom border on the jumbotron for visual effect */
