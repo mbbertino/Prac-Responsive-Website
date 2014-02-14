@@ -117,6 +117,8 @@ function updateCount(){
     updateCount()
   });
 
+/////////////////////////////
+// THIS IS THE EDIT FUNCTION
   $('.js-row').on('dblclick','.description', function(){
       $(this).siblings('.js-edit-input').show();
       $(this).siblings().children('.js-edit').focus();
@@ -137,6 +139,8 @@ function updateCount(){
       
       $(this).parent('.js-edit-input').hide();
   });
+// THIS IS THE END OF THE EDIT FUNCTION
+/////////////////////////////
 
   $('.folder-list').on('click','.js-all-todos', function(){
   	console.log('hey there')
