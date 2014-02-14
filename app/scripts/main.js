@@ -56,29 +56,32 @@ var todoData =[
 $(document).ready(function(){
 	 var todoTemplate = _.template($('.todo-template').text())
 
+
   // render preloaded data
   _.each(todoData, function(item, index){
     $('.js-todo-list').prepend(todoTemplate(item))
   });
 
-updateCount()
+// count function that gets called through out the app
+  updateCount()
 
-function updateCount(){
-  var allCount = todoData.length
-  var activeArray = _.where(todoData, {done: false})
-  var activeCount = activeArray.length
-  var completedArray = _.where(todoData, {done: true})
-  var completedCount = completedArray.length
+  function updateCount(){
+    var allCount = todoData.length
+    var activeCount = _.where(todoData, {done: false}).length
+    var completedCount = _.where(todoData, {done: true}).length
 
-  $('.js-all-badge').empty().html(allCount)
-  $('.js-active-badge').empty().html(activeCount)
-  $('.js-completed-badge').empty().html(completedCount)
-}
+    $('.js-all-badge').empty().html(allCount)
+    $('.js-active-badge').empty().html(activeCount)
+    $('.js-completed-badge').empty().html(completedCount)
+  }
 
 // click events
+///////////////
+
+// add a todo function
   $('.js-row').on('click', '.add-button', function(){
   	var todoentry = $('.js-todo-input').val()
-
+      
   	var todo = {
       description: todoentry,
       done: false,
@@ -89,11 +92,15 @@ function updateCount(){
 
     var renderedTodo = (todoTemplate(todo))
     $('.js-todo-list').prepend(renderedTodo)
+
+    $('.js-todo-input').val('')
+
     updateCount()
+
   });
 
+// this removes the item from the array.
   $('.js-row').on('click','.remove', function(){
-  	// this removes the item from the array.
   	var parentId = $(this).parent().parent().attr('id').split('-')[1];
   	
   	todoData = _.reject(todoData, function(item, index){ 
@@ -107,13 +114,17 @@ function updateCount(){
   $('.js-row').on('click','.completed', function(){
   	// this marks an item as completed the array.
   	var parentId = $(this).parent().parent().attr('id').split('-')[1];
+    var newClass
 
-  	_.each(todoData, function(item, index){ 
-      if (item.id == parentId) {
-      	item.done = true;
-      };
-    })
-    $(this).parent().parent().css('background-color','#D6D6D6')
+    var todo = _.findWhere(todoData, {id: parentId})
+    todo.done = !todo.done
+
+    newClass = todo.done
+
+    console.log(newClass)
+
+    $(this).parent().parent().removeClass('false','true')
+    $(this).parent().parent().addClass(newClass.toString())
     updateCount()
   });
 
@@ -141,6 +152,7 @@ function updateCount(){
   });
 // THIS IS THE END OF THE EDIT FUNCTION
 /////////////////////////////
+
 
   $('.folder-list').on('click','.js-all-todos', function(){
   	console.log('hey there')

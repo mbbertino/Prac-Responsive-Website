@@ -127,13 +127,12 @@ $darkgrey: #ecf0f1;
                 height: 167px;
                 width: 167px;
                 margin: 1px;
-                background: #3498db;
                 color: #fff;
-                font-weight: 300px;
                 border-radius: 3px;
+                background: #D6D6D6; 
                 
-                &.true {
-                    background: #D6D6D6; 
+                &.false {
+                    background: #3498db; 
                 }
 
                 .action-bar {
@@ -170,7 +169,7 @@ $darkgrey: #ecf0f1;
                 }
                     
                 .more-action-bar {
-                    // display: none;
+                    display: none;
                     width: 100%;
                     position: absolute;
                     margin-top: 15%;
