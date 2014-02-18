@@ -1,4 +1,4 @@
-
+// creating a sample data set
 var fakeModel = {
 	description: 'feed the dog',
 	done: false,
@@ -16,8 +16,11 @@ var fakeModelthree = {
 	done: false,
 	id: _.uniqueId('id')
 }
+
+// attaching the backbone model constructor to this data
 var Todo = Backbone.Model.extend();
 
+// attaching all the constructor and backbone function to a particular view
 var TodoView = Backbone.View.extend({
 
 	className: 'note-item',
@@ -27,7 +30,6 @@ var TodoView = Backbone.View.extend({
 	events: {
 		"click .js-completed": "toggleDone",
 		"click .js-remove": "toggleRemove"
-		// need to add this function in there
 		// edit button
 	},
 
